@@ -16,7 +16,7 @@ module scenes {
         // Start Method
         public start(): void {
             // add Intro Image
-            this._intro2Image = new createjs.Bitmap("../../Assets/images/Intro2.png");
+            this._intro2Image = new createjs.Bitmap("../../Assets/images/Intro4.png");
             this.addChild(this._intro2Image);
             
             this._next = new objects.Button("NextButton", config.Screen.CENTER_X + 150,
@@ -24,7 +24,7 @@ module scenes {
             this.addChild(this._next);
             this._next.on("click", this._nextClick, this);
             
-            this._back = new objects.Button("BackButton", config.Screen.CENTER_X - 150,
+            this._back = new objects.Button("BackButton", config.Screen.CENTER_X - 170,
                 config.Screen.CENTER_Y + 180);
             this.addChild(this._back);
             this._back.on("click", this._backClick, this);

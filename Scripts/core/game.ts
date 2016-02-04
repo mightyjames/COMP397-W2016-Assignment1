@@ -13,7 +13,9 @@ var intro: scenes.Intro;
 var intro2: scenes.Intro2;
 var intro3: scenes.Intro3;
 var intro4: scenes.Intro4;
-var game: scenes.Game;
+var game: scenes.Game
+
+
 var leftCave: scenes.LeftCave;
 var rightCave: scenes.RightCave;
 
@@ -83,28 +85,28 @@ function changeScene(): void {
             stage.removeAllChildren();
             intro2 = new scenes.Intro2();
             currentScene = intro2;
-            console.log("Starting INTRO Scene");
+            console.log("Starting INTRO2 Scene");
             break;
          case config.Scene.INTRO3:
             // show the MENU scene
             stage.removeAllChildren();
             intro3 = new scenes.Intro3();
             currentScene = intro3;
-            console.log("Starting INTRO Scene");
+            console.log("Starting INTRO3 Scene");
             break;
           case config.Scene.INTRO4:
             // show the MENU scene
             stage.removeAllChildren();
             intro4 = new scenes.Intro4();
             currentScene = intro4;
-            console.log("Starting INTRO Scene");
+            console.log("Starting INTRO4 Scene");
             break;
          case config.Scene.GAME:
             // show the MENU scene
             stage.removeAllChildren();
             game = new scenes.Game();
             currentScene = game;
-            console.log("Starting INTRO Scene");
+            console.log("Starting GAME Scene");
             break;
             
             

@@ -16,14 +16,14 @@ var scenes;
         // Start Method
         Game.prototype.start = function () {
             // add Intro Image
-            this._intro2Image = new createjs.Bitmap("../../Assets/images/Intro2.png");
+            this._intro2Image = new createjs.Bitmap("../../Assets/images/game.png");
             this.addChild(this._intro2Image);
-            this._next = new objects.Button("NextButton", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
-            this.addChild(this._next);
-            this._next.on("click", this._nextClick, this);
-            this._back = new objects.Button("BackButton", config.Screen.CENTER_X - 150, config.Screen.CENTER_Y + 180);
-            this.addChild(this._back);
-            this._back.on("click", this._backClick, this);
+            this._right = new objects.Button("RightButton", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
+            this.addChild(this._right);
+            this._right.on("click", this._nextClick, this);
+            this._left = new objects.Button("LeftButton", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
+            this.addChild(this._left);
+            this._left.on("click", this._backClick, this);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -32,11 +32,11 @@ var scenes;
         };
         //EVENT HANDLERS ++++++++++++++++++++
         Game.prototype._nextClick = function (event) {
-            scene = config.Scene.GAME;
+            scene = config.Scene.RIGHT_CAVE;
             changeScene();
         };
         Game.prototype._backClick = function (event) {
-            scene = config.Scene.INTRO2;
+            scene = config.Scene.LEFT_CAVE;
             changeScene();
         };
         return Game;

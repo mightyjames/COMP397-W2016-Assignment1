@@ -66,28 +66,28 @@ function changeScene() {
             stage.removeAllChildren();
             intro2 = new scenes.Intro2();
             currentScene = intro2;
-            console.log("Starting INTRO Scene");
+            console.log("Starting INTRO2 Scene");
             break;
         case config.Scene.INTRO3:
             // show the MENU scene
             stage.removeAllChildren();
             intro3 = new scenes.Intro3();
             currentScene = intro3;
-            console.log("Starting INTRO Scene");
+            console.log("Starting INTRO3 Scene");
             break;
         case config.Scene.INTRO4:
             // show the MENU scene
             stage.removeAllChildren();
             intro4 = new scenes.Intro4();
             currentScene = intro4;
-            console.log("Starting INTRO Scene");
+            console.log("Starting INTRO4 Scene");
             break;
         case config.Scene.GAME:
             // show the MENU scene
             stage.removeAllChildren();
             game = new scenes.Game();
             currentScene = game;
-            console.log("Starting INTRO Scene");
+            console.log("Starting GAME Scene");
             break;
         case config.Scene.LEFT_CAVE:
             // show the PLAY scene
