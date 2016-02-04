@@ -7,8 +7,29 @@
         public static INTRO3: number = 3;
         public static INTRO4: number = 4;
         public static GAME: number = 5;
-        public static LEFT_CAVE: number = 6;
-        public static RIGHT_CAVE: number = 7;
+        public static LEFT_FOREST: number = 6;
+        public static RIGHT_FOREST: number = 7;
+        public static FIGHT_LEFT: number = 8;
+        public static FIGHT_RIGHT: number = 9;
+        public static FINISH_ALL_LEFT: number = 10;
+        public static FINISH_ALL_RIGHT: number = 11;
+        public static FINISH_HALF_LEFT: number = 12;
+        public static FINISH_HALF_RIGHT: number = 13;
+        public static RUN_LEFT: number = 14;
+        public static RUN_RIGHT: number = 15;
+        public static RUN_FIGHT_LEFT: number = 16;
+        public static RUN_FIGHT_RIGHT: number = 17;
+        public static RUN_FIND_WAY_LEFT: number = 18;
+        public static RUN_FIND_WAY_RIGHT: number = 19;
+        public static BOSS_FIGHT_LEFT1: number = 20;
+        public static BOSS_FIGHT_LEFT2: number = 21;
+        public static BOSS_FIGHT_RIGHT1: number = 22;
+        public static BOSS_FIGHT_RIGHT2: number = 23;
+        public static BOSS_FIGHT_RIGHT3: number = 24;
+        public static BOSS_FIGHT_RIGHT4: number = 25;
+        
+       
+        
         
     }
     

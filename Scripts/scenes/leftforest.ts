@@ -1,10 +1,10 @@
-// INTRO SCENE
+// LEFT_CAVE SCENE
 module scenes {
     export class LeftForest extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _introImage: createjs.Bitmap;
-        private _leftCaveButton: objects.Button;
-        private _rightCaveButton: objects.Button;
+        private _leftForestImage: createjs.Bitmap;
+        private _fightButton: objects.Button;
+        private _runButton: objects.Button;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -15,35 +15,35 @@ module scenes {
         
         // Start Method
         public start(): void {
-            // add Intro Image
-            this._introImage = new createjs.Bitmap("../../Assets/images/LeftCave.png");
-            this.addChild(this._introImage);
-            
-            // add the LEFT_CAVE button to the MENU scene
-            this._leftCaveButton = new objects.Button(
-                "LeftCaveButton",
-                config.Screen.CENTER_X - 100,
+            // add LeftCave Image
+            this._leftForestImage = new createjs.Bitmap("../../Assets/images/LeftCave.png");
+            this.addChild(this._leftForestImage);
+
+            // add the BACK button to the OVER scene
+            this._fightButton = new objects.Button(
+                "StartOverButton",
+                config.Screen.CENTER_X + 150,
                 config.Screen.CENTER_Y + 180);
-            this.addChild(this._leftCaveButton);
-            
-            // LEFT_CAVE Button event listener
-            this._leftCaveButton.on("click", this._leftCaveButtonClick, this);
-            
-            // add the LEFT_CAVE button to the MENU scene
-            this._rightCaveButton = new objects.Button(
-                "RightCaveButton",
-                config.Screen.CENTER_X + 100,
+            this.addChild(this._fightButton);
+           
+            // START_OVER Button event listener
+            this._fightButton.on("click", this._fightClick, this);
+
+            this._runButton = new objects.Button(
+                "StartOverButton",
+                config.Screen.CENTER_X - 170,
                 config.Screen.CENTER_Y + 180);
-            this.addChild(this._rightCaveButton);
-            
-            // LEFT_CAVE Button event listener
-            this._rightCaveButton.on("click", this._rightCaveButtonClick, this);
-            
+            this.addChild(this._runButton);
+           
+            // START_OVER Button event listener
+            this._runButton.on("click", this._runClick, this);
+
+
             // add this scene to the global stage container
             stage.addChild(this);
         }
 
-        // INTRO Scene updates here
+        // PLAY Scene updates here
         public update(): void {
 
         }
@@ -51,17 +51,15 @@ module scenes {
         
         //EVENT HANDLERS ++++++++++++++++++++
         
-        // LEFT_CAVE Button click event handler
-        private _leftCaveButtonClick(event: createjs.MouseEvent) {
-            // Switch to the LEFT_CAVE Scene
-            scene = config.Scene.LEFT_CAVE;
+        // START_OVER Button click event handler
+        private _fightClick(event: createjs.MouseEvent) {
+            // Switch to the INTRO Scene
+            scene = config.Scene.FIGHT_LEFT;
             changeScene();
         }
-        
-        // LEFT_CAVE Button click event handler
-        private _rightCaveButtonClick(event: createjs.MouseEvent) {
-            // Switch to the LEFT_CAVE Scene
-            scene = config.Scene.RIGHT_CAVE;
+        private _runClick(event: createjs.MouseEvent) {
+            // Switch to the INTRO Scene
+            scene = config.Scene.RUN_LEFT;
             changeScene();
         }
     }

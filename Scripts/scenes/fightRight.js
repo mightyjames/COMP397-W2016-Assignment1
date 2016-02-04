@@ -6,15 +6,15 @@ var __extends = (this && this.__extends) || function (d, b) {
 // INTRO SCENE
 var scenes;
 (function (scenes) {
-    var Game = (function (_super) {
-        __extends(Game, _super);
+    var FightRight = (function (_super) {
+        __extends(FightRight, _super);
         // CONSTRUCTOR ++++++++++++++++++++++
-        function Game() {
+        function FightRight() {
             _super.call(this);
         }
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
-        Game.prototype.start = function () {
+        FightRight.prototype.start = function () {
             // add Intro Image
             this._intro2Image = new createjs.Bitmap("../../Assets/images/game.png");
             this.addChild(this._intro2Image);
@@ -28,19 +28,19 @@ var scenes;
             stage.addChild(this);
         };
         // INTRO Scene updates here
-        Game.prototype.update = function () {
+        FightRight.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
-        Game.prototype._nextClick = function (event) {
+        FightRight.prototype._nextClick = function (event) {
             scene = config.Scene.RIGHT_FOREST;
             changeScene();
         };
-        Game.prototype._backClick = function (event) {
+        FightRight.prototype._backClick = function (event) {
             scene = config.Scene.LEFT_FOREST;
             changeScene();
         };
-        return Game;
+        return FightRight;
     })(objects.Scene);
-    scenes.Game = Game;
+    scenes.FightRight = FightRight;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=game.js.map
+//# sourceMappingURL=fightRight.js.map

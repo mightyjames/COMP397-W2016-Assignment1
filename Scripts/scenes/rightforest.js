@@ -6,18 +6,18 @@ var __extends = (this && this.__extends) || function (d, b) {
 // LEFT_CAVE SCENE
 var scenes;
 (function (scenes) {
-    var RightCave = (function (_super) {
-        __extends(RightCave, _super);
+    var RightForest = (function (_super) {
+        __extends(RightForest, _super);
         // CONSTRUCTOR ++++++++++++++++++++++
-        function RightCave() {
+        function RightForest() {
             _super.call(this);
         }
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
-        RightCave.prototype.start = function () {
+        RightForest.prototype.start = function () {
             // add LeftCave Image
-            this._rightCaveImage = new createjs.Bitmap("../../Assets/images/RightCave.png");
-            this.addChild(this._rightCaveImage);
+            this._rightForestImage = new createjs.Bitmap("../../Assets/images/RightCave.png");
+            this.addChild(this._rightForestImage);
             // add the BACK button to the OVER scene
             this._startOverButton = new objects.Button("StartOverButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 180);
             this.addChild(this._startOverButton);
@@ -27,17 +27,17 @@ var scenes;
             stage.addChild(this);
         };
         // PLAY Scene updates here
-        RightCave.prototype.update = function () {
+        RightForest.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
         // START_OVER Button click event handler
-        RightCave.prototype._startOverButtonClick = function (event) {
+        RightForest.prototype._startOverButtonClick = function (event) {
             // Switch to the INTRO Scene
             scene = config.Scene.INTRO;
             changeScene();
         };
-        return RightCave;
+        return RightForest;
     })(objects.Scene);
-    scenes.RightCave = RightCave;
+    scenes.RightForest = RightForest;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=rightcave.js.map
+//# sourceMappingURL=rightforest.js.map

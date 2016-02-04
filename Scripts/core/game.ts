@@ -13,11 +13,12 @@ var intro: scenes.Intro;
 var intro2: scenes.Intro2;
 var intro3: scenes.Intro3;
 var intro4: scenes.Intro4;
-var game: scenes.Game
-
-
-var leftCave: scenes.LeftCave;
-var rightCave: scenes.RightCave;
+var game: scenes.Game;
+var leftForest: scenes.LeftForest;
+var rightForest: scenes.RightForest;
+var fightLeft: scenes.FightLeft;
+var fightRight: scenes.FightRight
+var runLeft: scenes.
 
 function init(): void {
     // create a reference the HTML canvas Element
@@ -107,24 +108,35 @@ function changeScene(): void {
             game = new scenes.Game();
             currentScene = game;
             console.log("Starting GAME Scene");
-            break;
-            
-            
-            
-        case config.Scene.LEFT_CAVE:
+            break;         
+        case config.Scene.LEFT_FOREST:
             // show the PLAY scene
             stage.removeAllChildren();
-            leftCave = new scenes.LeftCave();
-            currentScene = leftCave;
-            console.log("Starting LEFT_CAVE Scene");
+            leftForest = new scenes.LeftForest();
+            currentScene = leftForest;
+            console.log("Starting LEFT_FOREST Scene");
             break;
-        case config.Scene.RIGHT_CAVE:
+        case config.Scene.RIGHT_FOREST:
             // show the game OVER scene
             stage.removeAllChildren();
-            rightCave = new scenes.RightCave();
-            currentScene = rightCave;
-            console.log("Starting RIGHT_CAVE Scene");
+            rightForest = new scenes.RightForest();
+            currentScene = rightForest;
+            console.log("Starting RIGHT_FOREST Scene");
             break;
+        case config.Scene.FIGHT_LEFT:
+            // show the MENU scene
+            stage.removeAllChildren();
+            game = new scenes.Game();
+            currentScene = game;
+            console.log("Starting GAME Scene");
+            break;
+        case config.Scene.FIGHT_RIGHT:
+            // show the MENU scene
+            stage.removeAllChildren();
+            game = new scenes.Game();
+            currentScene = game;
+            console.log("Starting GAME Scene");
+            break;   
     }
 
     console.log(currentScene.numChildren);

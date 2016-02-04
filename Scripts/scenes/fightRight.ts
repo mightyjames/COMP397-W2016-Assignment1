@@ -1,6 +1,6 @@
 // INTRO SCENE
 module scenes {
-    export class Game extends objects.Scene {
+    export class FightRight extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _intro2Image: createjs.Bitmap;       
         private _right: objects.Button;
