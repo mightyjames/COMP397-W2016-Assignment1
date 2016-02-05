@@ -31,3 +31,4 @@
 /// <reference path="../scenes/bossFightRight3.ts" />
 /// <reference path="../scenes/bossFightRight4.ts" />
 /// <reference path="../scenes/savePrincess.ts" />
+/// <reference path="../scenes/fightHalfRightFail.ts" />

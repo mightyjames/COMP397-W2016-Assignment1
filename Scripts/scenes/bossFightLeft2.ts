@@ -18,8 +18,8 @@ module scenes {
             this._bossFight2Image = new createjs.Bitmap("../../Assets/images/bossFightLeft2.png");
             this.addChild(this._bossFight2Image);
             
-            this._bossFight2 = new objects.Button("RightButton", config.Screen.CENTER_X -45,
-                config.Screen.CENTER_Y + 180);
+            this._bossFight2 = new objects.Button("restart", config.Screen.CENTER_X -45,
+                config.Screen.CENTER_Y + 170);
             this.addChild(this._bossFight2);
             this._bossFight2.on("click", this._bossFightClick, this);
              

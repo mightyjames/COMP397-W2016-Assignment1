@@ -30,6 +30,7 @@ var config;
         Scene.BOSS_FIGHT_RIGHT3 = 24;
         Scene.BOSS_FIGHT_RIGHT4 = 25;
         Scene.SAVE_PRINCESS = 26;
+        Scene.FINISH_HALF_RIGHT_FAIL = 27;
         return Scene;
     })();
     config.Scene = Scene;

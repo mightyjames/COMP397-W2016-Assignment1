@@ -27,6 +27,10 @@ var rightForest;
 var fightRight;
 var fightAllRight;
 var fightHalfRight;
+var fightHalfRightFail;
+var bossFightRight1;
+var bossFightRight2;
+var bossFightRight3;
 function init() {
     // create a reference the HTML canvas Element
     canvas = document.getElementById("canvas");
@@ -202,6 +206,34 @@ function changeScene() {
             fightHalfRight = new scenes.FightHalfRight();
             currentScene = fightHalfRight;
             console.log("Starting FINISH_HALF_RIGHT Scene");
+            break;
+        case config.Scene.FINISH_HALF_RIGHT_FAIL:
+            // show the MENU scene
+            stage.removeAllChildren();
+            fightHalfRightFail = new scenes.FightHalfRightFail();
+            currentScene = fightHalfRightFail;
+            console.log("Starting FINISH_HALF_RIGHT_FAIL Scene");
+            break;
+        case config.Scene.BOSS_FIGHT_RIGHT1:
+            // show the MENU scene
+            stage.removeAllChildren();
+            bossFightRight1 = new scenes.BossFightRight1();
+            currentScene = bossFightRight1;
+            console.log("Starting BOSS_FIGHT_RIGHT1 Scene");
+            break;
+        case config.Scene.BOSS_FIGHT_RIGHT2:
+            // show the MENU scene
+            stage.removeAllChildren();
+            bossFightRight2 = new scenes.BossFightRight2();
+            currentScene = bossFightRight2;
+            console.log("Starting BOSS_FIGHT_RIGHT2 Scene");
+            break;
+        case config.Scene.BOSS_FIGHT_RIGHT3:
+            // show the MENU scene
+            stage.removeAllChildren();
+            bossFightRight3 = new scenes.BossFightRight3();
+            currentScene = bossFightRight3;
+            console.log("Starting BOSS_FIGHT_RIGHT3 Scene");
             break;
     }
     console.log(currentScene.numChildren);

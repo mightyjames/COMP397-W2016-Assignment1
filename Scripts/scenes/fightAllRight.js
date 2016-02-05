@@ -16,14 +16,11 @@ var scenes;
         // Start Method
         FightAllRight.prototype.start = function () {
             // add Intro Image
-            this._intro2Image = new createjs.Bitmap("../../Assets/images/game.png");
-            this.addChild(this._intro2Image);
-            this._finishAll = new objects.Button("RightButton", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
+            this._fightAllLeftImage = new createjs.Bitmap("../../Assets/images/AllKilledRight.png");
+            this.addChild(this._fightAllLeftImage);
+            this._finishAll = new objects.Button("bossButton", config.Screen.CENTER_X + -45, config.Screen.CENTER_Y + 170);
             this.addChild(this._finishAll);
-            this._finishAll.on("click", this._finishAllClick, this);
-            this._finishHalf = new objects.Button("LeftButton", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
-            this.addChild(this._finishHalf);
-            this._finishHalf.on("click", this._finishHalfClick, this);
+            this._finishAll.on("click", this._bossFightClick, this);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -31,12 +28,8 @@ var scenes;
         FightAllRight.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
-        FightAllRight.prototype._finishAllClick = function (event) {
-            scene = config.Scene.FINISH_ALL_LEFT;
-            changeScene();
-        };
-        FightAllRight.prototype._finishHalfClick = function (event) {
-            scene = config.Scene.FINISH_HALF_LEFT;
+        FightAllRight.prototype._bossFightClick = function (event) {
+            scene = config.Scene.BOSS_FIGHT_RIGHT1;
             changeScene();
         };
         return FightAllRight;

@@ -16,13 +16,17 @@ var scenes;
         // Start Method
         RightForest.prototype.start = function () {
             // add LeftCave Image
-            this._rightForestImage = new createjs.Bitmap("../../Assets/images/RightCave.png");
+            this._rightForestImage = new createjs.Bitmap("../../Assets/images/EastEnemy.png");
             this.addChild(this._rightForestImage);
             // add the BACK button to the OVER scene
-            this._startOverButton = new objects.Button("StartOverButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 180);
-            this.addChild(this._startOverButton);
+            this._fightRight = new objects.Button("Fight", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
+            this.addChild(this._fightRight);
             // START_OVER Button event listener
-            this._startOverButton.on("click", this._startOverButtonClick, this);
+            this._fightRight.on("click", this._fightButtonClick, this);
+            this._runRight = new objects.Button("Run", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
+            this.addChild(this._runRight);
+            // START_OVER Button event listener
+            this._runRight.on("click", this._runButtonClick, this);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -31,9 +35,14 @@ var scenes;
         };
         //EVENT HANDLERS ++++++++++++++++++++
         // START_OVER Button click event handler
-        RightForest.prototype._startOverButtonClick = function (event) {
+        RightForest.prototype._fightButtonClick = function (event) {
             // Switch to the INTRO Scene
-            scene = config.Scene.INTRO;
+            scene = config.Scene.FIGHT_RIGHT;
+            changeScene();
+        };
+        RightForest.prototype._runButtonClick = function (event) {
+            // Switch to the INTRO Scene
+            scene = config.Scene.RUN_RIGHT;
             changeScene();
         };
         return RightForest;

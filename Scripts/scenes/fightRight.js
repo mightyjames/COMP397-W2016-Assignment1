@@ -16,14 +16,14 @@ var scenes;
         // Start Method
         FightRight.prototype.start = function () {
             // add Intro Image
-            this._intro2Image = new createjs.Bitmap("../../Assets/images/game.png");
-            this.addChild(this._intro2Image);
-            this._right = new objects.Button("RightButton", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
-            this.addChild(this._right);
-            this._right.on("click", this._nextClick, this);
-            this._left = new objects.Button("LeftButton", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
-            this.addChild(this._left);
-            this._left.on("click", this._backClick, this);
+            this._fightLeftImage = new createjs.Bitmap("../../Assets/images/EastEnemyFight.png");
+            this.addChild(this._fightLeftImage);
+            this._finishAll = new objects.Button("Finish", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
+            this.addChild(this._finishAll);
+            this._finishAll.on("click", this._finishAllClick, this);
+            this._finishHalf = new objects.Button("moveAlong", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
+            this.addChild(this._finishHalf);
+            this._finishHalf.on("click", this._finishHalfClick, this);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -31,12 +31,12 @@ var scenes;
         FightRight.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
-        FightRight.prototype._nextClick = function (event) {
-            scene = config.Scene.RIGHT_FOREST;
+        FightRight.prototype._finishAllClick = function (event) {
+            scene = config.Scene.FINISH_ALL_RIGHT;
             changeScene();
         };
-        FightRight.prototype._backClick = function (event) {
-            scene = config.Scene.LEFT_FOREST;
+        FightRight.prototype._finishHalfClick = function (event) {
+            scene = config.Scene.FINISH_HALF_RIGHT;
             changeScene();
         };
         return FightRight;

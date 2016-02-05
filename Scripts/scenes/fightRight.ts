@@ -2,9 +2,9 @@
 module scenes {
     export class FightRight extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _intro2Image: createjs.Bitmap;       
-        private _right: objects.Button;
-        private _left: objects.Button;
+        private _fightLeftImage: createjs.Bitmap;       
+        private _finishAll: objects.Button;
+        private _finishHalf: objects.Button;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -16,18 +16,18 @@ module scenes {
         // Start Method
         public start(): void {
             // add Intro Image
-            this._intro2Image = new createjs.Bitmap("../../Assets/images/game.png");
-            this.addChild(this._intro2Image);
+            this._fightLeftImage = new createjs.Bitmap("../../Assets/images/EastEnemyFight.png");
+            this.addChild(this._fightLeftImage);
             
-            this._right = new objects.Button("RightButton", config.Screen.CENTER_X + 150,
+            this._finishAll = new objects.Button("Finish", config.Screen.CENTER_X - 170,
                 config.Screen.CENTER_Y + 180);
-            this.addChild(this._right);
-            this._right.on("click", this._nextClick, this);
+            this.addChild(this._finishAll);
+            this._finishAll.on("click", this._finishAllClick, this);
             
-            this._left = new objects.Button("LeftButton", config.Screen.CENTER_X - 170,
+            this._finishHalf = new objects.Button("moveAlong", config.Screen.CENTER_X + 150,
                 config.Screen.CENTER_Y + 180);
-            this.addChild(this._left);
-            this._left.on("click", this._backClick, this);
+            this.addChild(this._finishHalf);
+            this._finishHalf.on("click", this._finishHalfClick, this);
              
             // add this scene to the global stage container
             stage.addChild(this);
@@ -41,12 +41,12 @@ module scenes {
         
         //EVENT HANDLERS ++++++++++++++++++++
       
-      private _nextClick(event: createjs.MouseEvent){
-          scene = config.Scene.RIGHT_FOREST;
+      private _finishAllClick(event: createjs.MouseEvent){
+          scene = config.Scene.FINISH_ALL_RIGHT;
           changeScene();
         }
-      private _backClick(event: createjs.MouseEvent){
-          scene = config.Scene.LEFT_FOREST;
+      private _finishHalfClick(event: createjs.MouseEvent){
+          scene = config.Scene.FINISH_HALF_RIGHT;
           changeScene();
         }
     }

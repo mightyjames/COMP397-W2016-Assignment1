@@ -28,6 +28,7 @@
         public static BOSS_FIGHT_RIGHT3: number = 24;
         public static BOSS_FIGHT_RIGHT4: number = 25;
         public static SAVE_PRINCESS: number = 26;
+        public static FINISH_HALF_RIGHT_FAIL: number = 27;
         
        
         
