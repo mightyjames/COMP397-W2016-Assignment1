@@ -16,11 +16,11 @@ var scenes;
         // Start Method
         FightHalf.prototype.start = function () {
             // add Intro Image
-            this._fightAllLeftImage = new createjs.Bitmap("../../Assets/images/game.png");
-            this.addChild(this._fightAllLeftImage);
-            this._finishAll = new objects.Button("RightButton", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
-            this.addChild(this._finishAll);
-            this._finishAll.on("click", this._bossFightClick, this);
+            this._fightHalfLeftImage = new createjs.Bitmap("../../Assets/images/EnemyFightHalfLeft.png");
+            this.addChild(this._fightHalfLeftImage);
+            this._finishHalf = new objects.Button("bossButton", config.Screen.CENTER_X - 45, config.Screen.CENTER_Y + 180);
+            this.addChild(this._finishHalf);
+            this._finishHalf.on("click", this._bossFightClick, this);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -29,7 +29,7 @@ var scenes;
         };
         //EVENT HANDLERS ++++++++++++++++++++
         FightHalf.prototype._bossFightClick = function (event) {
-            scene = config.Scene.BOSS_FIGHT_LEFT1;
+            scene = config.Scene.BOSS_FIGHT_LEFT2;
             changeScene();
         };
         return FightHalf;

@@ -2,8 +2,8 @@
 module scenes {
     export class FightHalf extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _fightAllLeftImage: createjs.Bitmap;       
-        private _finishAll: objects.Button;       
+        private _fightHalfLeftImage: createjs.Bitmap;       
+        private _finishHalf: objects.Button;       
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -15,13 +15,13 @@ module scenes {
         // Start Method
         public start(): void {
             // add Intro Image
-            this._fightAllLeftImage = new createjs.Bitmap("../../Assets/images/game.png");
-            this.addChild(this._fightAllLeftImage);
+            this._fightHalfLeftImage = new createjs.Bitmap("../../Assets/images/EnemyFightHalfLeft.png");
+            this.addChild(this._fightHalfLeftImage);
             
-            this._finishAll = new objects.Button("RightButton", config.Screen.CENTER_X + 150,
+            this._finishHalf = new objects.Button("bossButton", config.Screen.CENTER_X -45,
                 config.Screen.CENTER_Y + 180);
-            this.addChild(this._finishAll);
-            this._finishAll.on("click", this._bossFightClick, this);
+            this.addChild(this._finishHalf);
+            this._finishHalf.on("click", this._bossFightClick, this);
              
             // add this scene to the global stage container
             stage.addChild(this);
@@ -36,7 +36,7 @@ module scenes {
         //EVENT HANDLERS ++++++++++++++++++++
       
       private _bossFightClick(event: createjs.MouseEvent){
-          scene = config.Scene.BOSS_FIGHT_LEFT1;
+          scene = config.Scene.BOSS_FIGHT_LEFT2;
           changeScene();
         }
     }

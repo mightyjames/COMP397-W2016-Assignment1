@@ -18,7 +18,7 @@ var scenes;
             // add Intro Image
             this._fightAllLeftImage = new createjs.Bitmap("../../Assets/images/AllKilledLeft.png");
             this.addChild(this._fightAllLeftImage);
-            this._finishAll = new objects.Button("bossButton", config.Screen.CENTER_X + -25, config.Screen.CENTER_Y + 170);
+            this._finishAll = new objects.Button("bossButton", config.Screen.CENTER_X + -45, config.Screen.CENTER_Y + 170);
             this.addChild(this._finishAll);
             this._finishAll.on("click", this._bossFightClick, this);
             // add this scene to the global stage container

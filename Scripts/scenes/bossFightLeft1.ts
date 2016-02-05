@@ -18,7 +18,7 @@ module scenes {
             this._bossFightLeft1Image = new createjs.Bitmap("../../Assets/images/bossFightLeft1.png");
             this.addChild(this._bossFightLeft1Image);
             
-            this._savePrincess = new objects.Button("saveThePrincess", config.Screen.CENTER_X  -25,
+            this._savePrincess = new objects.Button("saveThePrincess", config.Screen.CENTER_X  -45,
                 config.Screen.CENTER_Y + 170);
             this.addChild(this._savePrincess);
             this._savePrincess.on("click", this._savePrincessClick, this);
