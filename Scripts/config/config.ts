@@ -27,6 +27,7 @@
         public static BOSS_FIGHT_RIGHT2: number = 23;
         public static BOSS_FIGHT_RIGHT3: number = 24;
         public static BOSS_FIGHT_RIGHT4: number = 25;
+        public static SAVE_PRINCESS: number = 26;
         
        
         

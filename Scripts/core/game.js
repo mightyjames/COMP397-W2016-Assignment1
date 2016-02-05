@@ -16,6 +16,9 @@ var leftForest;
 var fightLeft;
 var fightAllLeft;
 var fightHalfLeft;
+var bossFightLeft1;
+var bossFightLeft2;
+var savePrincess;
 //RIGHT_FOREST************************************
 var rightForest;
 var fightRight;
@@ -125,6 +128,27 @@ function changeScene() {
             fightHalfLeft = new scenes.FightHalf();
             currentScene = fightHalfLeft;
             console.log("Starting FINISH_HALF_LEFT Scene");
+            break;
+        case config.Scene.BOSS_FIGHT_LEFT1:
+            // show the MENU scene
+            stage.removeAllChildren();
+            bossFightLeft1 = new scenes.BossFightLeft1();
+            currentScene = bossFightLeft1;
+            console.log("Starting BOSS_FIGHT_LEFT1 Scene");
+            break;
+        case config.Scene.BOSS_FIGHT_LEFT2:
+            // show the MENU scene
+            stage.removeAllChildren();
+            bossFightLeft2 = new scenes.BossFightLeft2();
+            currentScene = bossFightLeft2;
+            console.log("Starting BOSS_FIGHT_LEFT2 Scene");
+            break;
+        case config.Scene.SAVE_PRINCESS:
+            // show the MENU scene
+            stage.removeAllChildren();
+            savePrincess = new scenes.SavePrincess();
+            currentScene = savePrincess;
+            console.log("Starting SAVE_PRINCESS Scene");
             break;
         //RIGHT_FOREST***************************************
         case config.Scene.RIGHT_FOREST:

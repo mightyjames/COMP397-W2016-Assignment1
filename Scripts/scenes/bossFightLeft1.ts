@@ -2,9 +2,8 @@
 module scenes {
     export class BossFightLeft1 extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _intro2Image: createjs.Bitmap;       
-        private _finishAll: objects.Button;
-        private _finishHalf: objects.Button;
+        private _bossFightLeft1Image: createjs.Bitmap;       
+        private _savePrincess: objects.Button;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -16,19 +15,14 @@ module scenes {
         // Start Method
         public start(): void {
             // add Intro Image
-            this._intro2Image = new createjs.Bitmap("../../Assets/images/game.png");
-            this.addChild(this._intro2Image);
+            this._bossFightLeft1Image = new createjs.Bitmap("../../Assets/images/bossFightLeft1.png");
+            this.addChild(this._bossFightLeft1Image);
             
-            this._finishAll = new objects.Button("RightButton", config.Screen.CENTER_X + 150,
-                config.Screen.CENTER_Y + 180);
-            this.addChild(this._finishAll);
-            this._finishAll.on("click", this._finishAllClick, this);
+            this._savePrincess = new objects.Button("saveThePrincess", config.Screen.CENTER_X  -25,
+                config.Screen.CENTER_Y + 170);
+            this.addChild(this._savePrincess);
+            this._savePrincess.on("click", this._savePrincessClick, this);
             
-            this._finishHalf = new objects.Button("LeftButton", config.Screen.CENTER_X - 170,
-                config.Screen.CENTER_Y + 180);
-            this.addChild(this._finishHalf);
-            this._finishHalf.on("click", this._finishHalfClick, this);
-             
             // add this scene to the global stage container
             stage.addChild(this);
         }
@@ -41,12 +35,8 @@ module scenes {
         
         //EVENT HANDLERS ++++++++++++++++++++
       
-      private _finishAllClick(event: createjs.MouseEvent){
-          scene = config.Scene.FINISH_ALL_LEFT;
-          changeScene();
-        }
-      private _finishHalfClick(event: createjs.MouseEvent){
-          scene = config.Scene.FINISH_HALF_LEFT;
+      private _savePrincessClick(event: createjs.MouseEvent){
+          scene = config.Scene.SAVE_PRINCESS;
           changeScene();
         }
     }

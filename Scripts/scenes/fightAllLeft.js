@@ -16,9 +16,9 @@ var scenes;
         // Start Method
         FightAllLeft.prototype.start = function () {
             // add Intro Image
-            this._fightAllLeftImage = new createjs.Bitmap("../../Assets/images/game.png");
+            this._fightAllLeftImage = new createjs.Bitmap("../../Assets/images/AllKilledLeft.png");
             this.addChild(this._fightAllLeftImage);
-            this._finishAll = new objects.Button("RightButton", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
+            this._finishAll = new objects.Button("bossButton", config.Screen.CENTER_X + -25, config.Screen.CENTER_Y + 170);
             this.addChild(this._finishAll);
             this._finishAll.on("click", this._bossFightClick, this);
             // add this scene to the global stage container

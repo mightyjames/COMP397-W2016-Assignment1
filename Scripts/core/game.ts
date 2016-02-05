@@ -21,6 +21,9 @@ var leftForest: scenes.LeftForest;
 var fightLeft: scenes.FightLeft;
 var fightAllLeft: scenes.FightAllLeft;
 var fightHalfLeft: scenes.FightHalf;
+var bossFightLeft1: scenes.BossFightLeft1;
+var bossFightLeft2: scenes.BossFightLeft2;
+var savePrincess: scenes.SavePrincess;
 
 
 
@@ -120,7 +123,7 @@ function changeScene(): void {
             console.log("Starting GAME Scene");
             break;
 
-            //LEFT_FOREST**************************************
+        //LEFT_FOREST**************************************
         case config.Scene.LEFT_FOREST:
             // show the PLAY scene
             stage.removeAllChildren();
@@ -149,8 +152,29 @@ function changeScene(): void {
             currentScene = fightHalfLeft;
             console.log("Starting FINISH_HALF_LEFT Scene");
             break;
+        case config.Scene.BOSS_FIGHT_LEFT1:
+            // show the MENU scene
+            stage.removeAllChildren();
+            bossFightLeft1 = new scenes.BossFightLeft1();
+            currentScene = bossFightLeft1;
+            console.log("Starting BOSS_FIGHT_LEFT1 Scene");
+            break;
+        case config.Scene.BOSS_FIGHT_LEFT2:
+            // show the MENU scene
+            stage.removeAllChildren();
+            bossFightLeft2 = new scenes.BossFightLeft2();
+            currentScene = bossFightLeft2;
+            console.log("Starting BOSS_FIGHT_LEFT2 Scene");
+            break;
+            case config.Scene.SAVE_PRINCESS:
+            // show the MENU scene
+            stage.removeAllChildren();
+            savePrincess = new scenes.SavePrincess();
+            currentScene = savePrincess;
+            console.log("Starting SAVE_PRINCESS Scene");
+            break;
 
-            //RIGHT_FOREST***************************************
+        //RIGHT_FOREST***************************************
         case config.Scene.RIGHT_FOREST:
             // show the game OVER scene
             stage.removeAllChildren();

@@ -6,34 +6,34 @@ var __extends = (this && this.__extends) || function (d, b) {
 // INTRO SCENE
 var scenes;
 (function (scenes) {
-    var BossFightLeft1 = (function (_super) {
-        __extends(BossFightLeft1, _super);
+    var SavePrincess = (function (_super) {
+        __extends(SavePrincess, _super);
         // CONSTRUCTOR ++++++++++++++++++++++
-        function BossFightLeft1() {
+        function SavePrincess() {
             _super.call(this);
         }
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
-        BossFightLeft1.prototype.start = function () {
+        SavePrincess.prototype.start = function () {
             // add Intro Image
-            this._bossFightLeft1Image = new createjs.Bitmap("../../Assets/images/bossFightLeft1.png");
-            this.addChild(this._bossFightLeft1Image);
-            this._savePrincess = new objects.Button("saveThePrincess", config.Screen.CENTER_X - 25, config.Screen.CENTER_Y + 170);
+            this._savePrincessImage = new createjs.Bitmap("../../Assets/images/princessRescue.png");
+            this.addChild(this._savePrincessImage);
+            this._savePrincess = new objects.Button("restart", config.Screen.CENTER_X + 0, config.Screen.CENTER_Y + 170);
             this.addChild(this._savePrincess);
             this._savePrincess.on("click", this._savePrincessClick, this);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // INTRO Scene updates here
-        BossFightLeft1.prototype.update = function () {
+        SavePrincess.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
-        BossFightLeft1.prototype._savePrincessClick = function (event) {
-            scene = config.Scene.SAVE_PRINCESS;
+        SavePrincess.prototype._savePrincessClick = function (event) {
+            scene = config.Scene.INTRO;
             changeScene();
         };
-        return BossFightLeft1;
+        return SavePrincess;
     })(objects.Scene);
-    scenes.BossFightLeft1 = BossFightLeft1;
+    scenes.SavePrincess = SavePrincess;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=bossFightLeft1.js.map
+//# sourceMappingURL=savePrincess.js.map
