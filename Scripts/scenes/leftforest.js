@@ -16,14 +16,14 @@ var scenes;
         // Start Method
         LeftForest.prototype.start = function () {
             // add LeftCave Image
-            this._leftForestImage = new createjs.Bitmap("../../Assets/images/LeftCave.png");
+            this._leftForestImage = new createjs.Bitmap("../../Assets/images/WestEnemy.png");
             this.addChild(this._leftForestImage);
             // add the BACK button to the OVER scene
-            this._fightButton = new objects.Button("StartOverButton", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
+            this._fightButton = new objects.Button("Fight", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
             this.addChild(this._fightButton);
             // START_OVER Button event listener
             this._fightButton.on("click", this._fightClick, this);
-            this._runButton = new objects.Button("StartOverButton", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
+            this._runButton = new objects.Button("Run", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
             this.addChild(this._runButton);
             // START_OVER Button event listener
             this._runButton.on("click", this._runClick, this);

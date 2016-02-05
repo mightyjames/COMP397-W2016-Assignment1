@@ -11,11 +11,16 @@ var intro2;
 var intro3;
 var intro4;
 var game;
+//LEFT_FOREST*************************************
 var leftForest;
-var rightForest;
 var fightLeft;
+var fightAllLeft;
+var fightHalfLeft;
+//RIGHT_FOREST************************************
+var rightForest;
 var fightRight;
-var runLeft;
+var fightAllRight;
+var fightHalfRight;
 function init() {
     // create a reference the HTML canvas Element
     canvas = document.getElementById("canvas");
@@ -92,6 +97,7 @@ function changeScene() {
             currentScene = game;
             console.log("Starting GAME Scene");
             break;
+        //LEFT_FOREST**************************************
         case config.Scene.LEFT_FOREST:
             // show the PLAY scene
             stage.removeAllChildren();
@@ -99,6 +105,28 @@ function changeScene() {
             currentScene = leftForest;
             console.log("Starting LEFT_FOREST Scene");
             break;
+        case config.Scene.FIGHT_LEFT:
+            // show the MENU scene
+            stage.removeAllChildren();
+            fightLeft = new scenes.FightLeft();
+            currentScene = fightLeft;
+            console.log("Starting FIGHT_LEFT Scene");
+            break;
+        case config.Scene.FINISH_ALL_LEFT:
+            // show the MENU scene
+            stage.removeAllChildren();
+            fightAllLeft = new scenes.FightAllLeft();
+            currentScene = fightAllLeft;
+            console.log("Starting FINISH_ALL_LEFT Scene");
+            break;
+        case config.Scene.FINISH_HALF_LEFT:
+            // show the MENU scene
+            stage.removeAllChildren();
+            fightHalfLeft = new scenes.FightHalf();
+            currentScene = fightHalfLeft;
+            console.log("Starting FINISH_HALF_LEFT Scene");
+            break;
+        //RIGHT_FOREST***************************************
         case config.Scene.RIGHT_FOREST:
             // show the game OVER scene
             stage.removeAllChildren();
@@ -106,19 +134,26 @@ function changeScene() {
             currentScene = rightForest;
             console.log("Starting RIGHT_FOREST Scene");
             break;
-        case config.Scene.FIGHT_LEFT:
-            // show the MENU scene
-            stage.removeAllChildren();
-            game = new scenes.Game();
-            currentScene = game;
-            console.log("Starting GAME Scene");
-            break;
         case config.Scene.FIGHT_RIGHT:
             // show the MENU scene
             stage.removeAllChildren();
-            game = new scenes.Game();
-            currentScene = game;
-            console.log("Starting GAME Scene");
+            fightRight = new scenes.FightRight();
+            currentScene = fightRight;
+            console.log("Starting FIGHT_RIGHT Scene");
+            break;
+        case config.Scene.FINISH_ALL_RIGHT:
+            // show the MENU scene
+            stage.removeAllChildren();
+            fightAllRight = new scenes.FightAllRight();
+            currentScene = fightAllRight;
+            console.log("Starting FINISH_ALL_RIGHT Scene");
+            break;
+        case config.Scene.FINISH_HALF_RIGHT:
+            // show the MENU scene
+            stage.removeAllChildren();
+            fightHalfRight = new scenes.FightHalfRight();
+            currentScene = fightHalfRight;
+            console.log("Starting FINISH_HALF_RIGHT Scene");
             break;
     }
     console.log(currentScene.numChildren);

@@ -16,12 +16,12 @@ var scenes;
         // Start Method
         FightLeft.prototype.start = function () {
             // add Intro Image
-            this._intro2Image = new createjs.Bitmap("../../Assets/images/game.png");
-            this.addChild(this._intro2Image);
-            this._finishAll = new objects.Button("RightButton", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
+            this._fightLeftImage = new createjs.Bitmap("../../Assets/images/WestEnemyFight.png");
+            this.addChild(this._fightLeftImage);
+            this._finishAll = new objects.Button("Finish", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 180);
             this.addChild(this._finishAll);
             this._finishAll.on("click", this._finishAllClick, this);
-            this._finishHalf = new objects.Button("LeftButton", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
+            this._finishHalf = new objects.Button("moveAlong", config.Screen.CENTER_X - 170, config.Screen.CENTER_Y + 180);
             this.addChild(this._finishHalf);
             this._finishHalf.on("click", this._finishHalfClick, this);
             // add this scene to the global stage container

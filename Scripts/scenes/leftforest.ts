@@ -16,13 +16,13 @@ module scenes {
         // Start Method
         public start(): void {
             // add LeftCave Image
-            this._leftForestImage = new createjs.Bitmap("../../Assets/images/LeftCave.png");
+            this._leftForestImage = new createjs.Bitmap("../../Assets/images/WestEnemy.png");
             this.addChild(this._leftForestImage);
 
             // add the BACK button to the OVER scene
             this._fightButton = new objects.Button(
-                "StartOverButton",
-                config.Screen.CENTER_X + 150,
+                "Fight",
+                config.Screen.CENTER_X - 170,
                 config.Screen.CENTER_Y + 180);
             this.addChild(this._fightButton);
            
@@ -30,8 +30,8 @@ module scenes {
             this._fightButton.on("click", this._fightClick, this);
 
             this._runButton = new objects.Button(
-                "StartOverButton",
-                config.Screen.CENTER_X - 170,
+                "Run",
+                config.Screen.CENTER_X + 150,
                 config.Screen.CENTER_Y + 180);
             this.addChild(this._runButton);
            
